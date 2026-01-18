@@ -9,5 +9,14 @@
   "edit": "edit",
   "delete": "delete",
   "cancel": "cancel",
-  "confirm": "confirm"
+  "confirm": "confirm",
+
+  "Name is required": "Name is required",
+  "Name length cannot exceed 20 characters": "Name length cannot exceed 20 characters",
+  "The name field may only include letters and Chinese characters": "The name field may only include letters and Chinese characters",
+  "deleteConfirm": "Are you sure you want to delete \"{name}\"?",
+  "Age is required": "Age is required",
+  "Age must be a number between 1 and 120": "Age must be a number between 1 and 120",
+  "Please enter your name": "Please enter your name",
+  "Please enter your age": "Please enter your age"
 }

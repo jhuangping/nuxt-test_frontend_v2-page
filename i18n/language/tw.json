@@ -9,5 +9,14 @@
   "edit": "修改",
   "delete": "刪除",
   "cancel": "取消",
-  "confirm": "確定"
+  "confirm": "確定",
+
+  "Name is required": "名字不能為空",
+  "Name length cannot exceed 20 characters": "名字長度不能超過20個字",
+  "The name field may only include letters and Chinese characters": "名字欄位只能包含字母和中文字符",
+  "deleteConfirm": "確定要刪除「{name}」嗎？",
+  "Age is required": "年齡不能為空",
+  "Age must be a number between 1 and 120": "年齡必須是1-120之間的數字",
+  "Please enter your name": "請輸入名字",
+  "Please enter your age": "請輸入年齡"
 }

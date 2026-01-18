@@ -18,7 +18,7 @@
         </div>
       </div>
       <div v-else class="mb-4">
-        確定要刪除 "{{ editingUser?.name }}" 嗎？
+        {{ $t('deleteConfirm', { name: editingUser?.name }) }}
       </div>
       <div class="mt-4 flex justify-end">
         <EBtn :text="t('cancel')" color="warn" @click="closeLightbox" />
@@ -51,23 +51,23 @@ const form = reactive({
 const hasSubmitted = ref(false)
 
 const nameError = computed(() => {
-  if (!form.name.trim()) return '名字不能為空'
-  if (form.name.length > 20) return '名字長度不能超過20個字符'
-  if (!/^[a-zA-Z\u4e00-\u9fff]+$/.test(form.name.trim())) return '名字只能包含字母和中文字符'
+  if (!form.name.trim()) return t('Name is required')
+  if (form.name.length > 20) return t('Name length cannot exceed 20 characters')
+  if (!/^[a-zA-Z\u4e00-\u9fff]+$/.test(form.name.trim())) return t('The name field may only include letters and Chinese characters')
   return ''
 })
 
 const ageError = computed(() => {
   const ageStr = String(form.age).trim()
-  if (!form.age.trim()) return '年齡不能為空'
+  if (!form.age.trim()) return t('Age is required')
   const ageNum = parseInt(ageStr, 10)
-  if (isNaN(ageNum) || ageNum < 1 || ageNum > 120) return '年齡必須是1-120的數字'
+  if (isNaN(ageNum) || ageNum < 1 || ageNum > 120) return t('Age must be a number between 1 and 120')
   return ''
 })
 
 const fields = [
-  { key: 'name' as const, label: t('name'), placeholder: '請輸入名字', error: nameError },
-  { key: 'age' as const, label: t('age'), placeholder: '請輸入年齡', error: ageError }
+  { key: 'name' as const, label: t('name'), placeholder: t('Please enter your name'), error: nameError },
+  { key: 'age' as const, label: t('age'), placeholder: t('Please enter your age'), error: ageError }
 ]
 
 const isFormValid = computed(() => !nameError.value && !ageError.value)
