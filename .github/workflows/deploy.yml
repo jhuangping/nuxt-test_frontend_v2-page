@@ -17,6 +17,8 @@ jobs:
       # Pick your own package manager and build script
       - run: pnpm install
       - run: pnpm nuxt build --preset github_pages
+        env:
+          NUXT_APP_BASE_URL: /nuxt-test_frontend_v2-page/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -32,7 +34,6 @@ jobs:
     # Deploy to the github_pages environment
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
